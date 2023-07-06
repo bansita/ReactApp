@@ -52,7 +52,7 @@ function App() {
   return (
     <>
     {/* here if we don't pass the props then it will display the default props which is set in Navbar.js file */}
-    <Navbar/>
+    {/* <Navbar/> */}
     {/* <Router> */}
     <Navbar title="TextUtil" /*aboutText="About"*/ mode={Mode} changeMode={changeMode} /*toggleMode={toggleMode}*//>
     <Alert alert={alert}/>
