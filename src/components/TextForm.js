@@ -46,18 +46,18 @@ export default function TextForm(props) {
           rows="6"
         ></textarea>
       </div>
-      <button className="btn btn-primary mx-1" onClick={handleUpClick}>
+      <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
         Convert to UpperCase
       </button>
-      <button className="btn btn-primary mx-1" onClick={handleLowClick}>
+      <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>
         Convert to LowerCase
       </button>
-      <button className="btn btn-primary mx-1" onClick={ReverseText}>Reverse generator</button>
-      <button className="btn btn-primary mx-1" onClick={clearText}>Clear </button>
+      <button className="btn btn-primary mx-1 my-1" onClick={ReverseText}>Reverse generator</button>
+      <button className="btn btn-primary mx-1 my-1" onClick={clearText}>Clear </button>
     </div>
     <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
         <h2>Yours Text Summary</h2>
-        <p>{text.split(" ").length} words {text.length} characters</p>
+        <p>{text.split(" ").filter((element)=>{return element.length!=0}).length} words {text.length} characters</p>
         <p>{0.008*text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter something here to preview"}</p>

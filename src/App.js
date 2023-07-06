@@ -3,12 +3,12 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-// import About from "./components/About";
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-// } from "react-router-dom";
+import About from "./components/About";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   const[Mode,setMode]=useState('light');
@@ -53,19 +53,20 @@ function App() {
     <>
     {/* here if we don't pass the props then it will display the default props which is set in Navbar.js file */}
     {/* <Navbar/> */}
-    {/* <Router> */}
-    <Navbar title="TextUtil" /*aboutText="About"*/ mode={Mode} changeMode={changeMode} /*toggleMode={toggleMode}*//>
+    <Router>
+    <Navbar title="TextUtil" aboutText="About" mode={Mode} changeMode={changeMode} /*toggleMode={toggleMode}*//>
     <Alert alert={alert}/>
     <div className="container">
-          {/* <Routes>
-            <Route exact path="/about" element={<About />}>
-            </Route> */}
-            {/* <Route exact path="/" element={ */}
-            <TextForm heading="Enter text to analyze"  mode={Mode} showAlert={showAlert} />
-            {/* </Route> */}
-          {/* </Routes> */}
+          <Routes>
+            <Route exact path="/about" element={
+            <About />
+            }>
+            </Route>
+            <Route exact path="/" element={<TextForm heading="Enter text to analyze"  mode={Mode} showAlert={showAlert} />}>
+            </Route>
+          </Routes>
         </div>
-    {/* </Router> */}
+    </Router>
   
     </>
   );
