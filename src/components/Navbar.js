@@ -24,7 +24,7 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
+              <Link className="nav-link " aria-current="page" to="/">
                 Home
               </Link>
               {/* <a className="nav-link active" aria-current="page" href="/">
@@ -37,25 +37,24 @@ export default function Navbar(props) {
               </Link>
             </li>
           </ul>
-          {/* <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            /> */}
-            {/* <button className="btn btn-outline-success" type="submit">
-              Search
-            </button> */}
-          {/* </form> */}
-          <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
-              <input className="form-check-input" type="checkbox" onClick={props.changeMode} role="switch" id="flexSwitchCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable DarkMode</label>
+          <div className="d-flex">
+            <div className="bg-primary rounded mx-2" onClick={()=>{props.changeMode('primary')}} style={{height:'30px' , width:'30px'}}></div>
           </div>
-          {/* <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
-              <input className="form-check-input" type="checkbox" onClick={props.toggleMode} role="switch" id="flexSwitchCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable GreenMode</label>
-          </div> */}
+          <div className="d-flex">
+            <div className="bg-danger rounded mx-2" onClick={()=>{props.changeMode('danger')}} style={{height:'30px' , width:'30px'}}></div>
+          </div>
+          <div className="d-flex">
+            <div className="bg-success rounded mx-2" onClick={()=>{props.changeMode('success')}} style={{height:'30px' , width:'30px'}}></div>
+          </div>
+          <div className="d-flex">
+            <div className="bg-warning rounded mx-2" onClick={()=>{props.changeMode('warning')}} style={{height:'30px' , width:'30px'}}></div>
+          </div>
+          <div className="d-flex">
+            <div className="bg-dark rounded mx-2" onClick={()=>{props.changeMode('dark')}} style={{height:'30px' , width:'30px'}}></div>
+          </div>
+          <div className="d-flex">
+            <div className="bg-light rounded mx-2" onClick={()=>{props.changeMode('light')}} style={{height:'30px' , width:'30px'}}></div>
+          </div>
         </div>
       </div>
     </nav>

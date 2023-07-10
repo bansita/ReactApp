@@ -22,19 +22,27 @@ function App() {
       setAlert(null);
     },3000)
   }
-  const changeMode=()=>{
+  const changeMode=(cls)=>{
+    removeBodyClasses();
+    console.log(cls)
+    document.body.classList.add('bg-'+cls)
     if(Mode==='light'){
       setMode('dark')
       document.body.style.backgroundColor='#052c65'
-      showAlert("Dark Mode has been enabled","sucess");
       document.title='TextUtils-Dark Mode';
     }
     else{
       setMode('light')
       document.body.style.backgroundColor='white'
-      showAlert("light Mode has been enabled","sucess");
       document.title='TextUtils-Dark Mode';
     }
+  }
+  const removeBodyClasses=()=>{
+    document.body.classList.remove('bg-light')
+    document.body.classList.remove('bg-dark')
+    document.body.classList.remove('bg-success')
+    document.body.classList.remove('bg-danger')
+    document.body.classList.remove('bg-warning')
   }
   // const toggleMode=()=>{
   //   if(Mode==='light'){
@@ -59,10 +67,10 @@ function App() {
     <div className="container">
           <Routes>
             <Route exact path="/about" element={
-            <About />
+            <About mode={Mode}/>
             }>
             </Route>
-            <Route exact path="/" element={<TextForm heading="Enter text to analyze"  mode={Mode} showAlert={showAlert} />}>
+            <Route exact path="/" element={<TextForm heading="Try TextUtils-Word counter , Character counter , Remove extra space"  mode={Mode} showAlert={showAlert} />}>
             </Route>
           </Routes>
         </div>
